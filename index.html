@@ -4,7 +4,7 @@
         <title>The Incredible Doctor Flying Cloud</title>
         <link href='https://fonts.googleapis.com/css?family=Carter One' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Walter Turncoat' rel='stylesheet'>
-        <link rel="stylesheet" href="styles.css" type="text/css"></style>
+        <link rel="stylesheet" href="styles.css" type="text/css">
     </head>
 <body>
     <main>
@@ -232,5 +232,29 @@
             Dr Flying cloud joined our family in 1934 in the Massey house @ almond, ar.
         </p>
     </main>
+    <div class="navigation">
+        <a href="#" class="previous" onclick="previous()">&laquo; Previous</a>
+        <a href="#" class="next" onclick="next()">Next &raquo;</a>
+    </div>
+    <script type="text/javascript">
+        let currentSelected = 0;
+
+        document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+
+        function next(){
+            if (currentSelected < document.getElementsByTagName("p").length -1){
+                document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
+                currentSelected += 1;
+                document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+            }
+        }
+        function previous(){
+            if (currentSelected > 0) {
+                document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
+                currentSelected -= 1;
+                document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+            }
+        }
+    </script>
 </body>
 </html>

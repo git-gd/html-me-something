@@ -11,6 +11,8 @@ body {
 }
 
 h1 {
+    position: sticky;
+    top: 0;
     font-family: 'Carter One';
     font-size: 36px;
     color: white;
@@ -19,15 +21,27 @@ h1 {
 }
 
 p {
+    position: absolute;
+    margin-left: 550px;
+    margin-right: 30px;
     font-family: 'Walter Turncoat';
-    font-size: 18px;
+    font-size: 36px;
     color: white;
+    text-shadow: 2px 2px 4px black;
+    visibility: hidden;
 }
 
 img {
     position: sticky;
-    top: 0;
+    left: 30pt;
     border-radius: 40pt;
     float: left;
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)
 }
