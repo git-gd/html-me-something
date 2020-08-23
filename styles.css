@@ -1,36 +1,3 @@
 body {
     background: grey;
 }
-
-#hero_selector {
-    width: 400px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    background: red;
-}
-
-#Warrior {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: blue;
-}
-#Cleric {
-    width: inherit;
-    height: inherit;
-    position: relative;
-    background: white;
-}
-#Wizard {
-    width: inherit;
-    height: inherit;
-    position: relative;
-    background: yellow;
-}
-#Rogue{
-    width: inherit;
-    height: inherit;
-    position: relative;
-    background: green;
-}
