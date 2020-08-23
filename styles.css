@@ -4,6 +4,12 @@ body {
     background-attachment: fixed;
 }
 
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
 h1 {
     font-family: 'Carter One';
     font-size: 36px;
@@ -12,18 +18,16 @@ h1 {
     text-align: center;
 }
 
-p { 
+p {
     font-family: 'Walter Turncoat';
     font-size: 18px;
     color: white;
 }
 
 img {
+    position: sticky;
+    top: 0;
     border-radius: 40pt;
     float: left;
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-}
-
-.txtColumn {
-    padding: 20pt;
 }
