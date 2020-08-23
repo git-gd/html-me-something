@@ -4,15 +4,7 @@ body {
     background-attachment: fixed;
 }
 
-.header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-}
-
 h1 {
-    position: sticky;
-    top: 0;
     font-family: 'Carter One';
     font-size: 36px;
     color: white;
@@ -31,17 +23,21 @@ p {
     visibility: hidden;
 }
 
-img {
-    position: sticky;
-    left: 30pt;
+#portrait {
+    margin-left: 20pt;
     border-radius: 40pt;
     float: left;
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
 }
 
+#previous {
+    transform: rotate(180deg);
+}
+
 .navigation {
     position: absolute;
     bottom: 0;
+    padding: 10pt;
     left: 50%;
     transform: translateX(-50%)
 }
