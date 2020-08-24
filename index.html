@@ -4,6 +4,7 @@
         <title>The Incredible Doctor Flying Cloud</title>
         <link href='https://fonts.googleapis.com/css?family=Carter One' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Walter Turncoat' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css" type="text/css">
     </head>
 <body>
@@ -65,7 +66,7 @@
             According to Mrs. Bullard this doctor, who was also a
             Methodist preacher, was performing healing miracles
             everywhere he went. at grandmas request Papa drove
-            down the mountain and asked DR flying cloud to come
+            down the mountain and asked doctor flying cloud to come
             and treat grandmas ailments.</p>
         <p>He moved into our house bag and baggage --- and stayed
             fifteen months. He even sent for his nephew, Willie, to
@@ -83,7 +84,7 @@
             some pretty wild dreams --- the most frightening ones
             had to do with people being buried alive. I still have a
             phobia about that!</p>
-        <p>Eugene, Evelyn and I grew quite fond of DR flying
+        <p>Eugene, Evelyn and I grew quite fond of doctor flying
             cloud and I believe he liked us too. he insisted we call
             him grandpa which I for one was a little reluctant to do.
             I felt that name was only for grandpa Jackson.
@@ -108,7 +109,7 @@
             belonged to him. Mama told me to apologize but I
             refused to say I was sorry. she took a peach tree limb
             and switched my bare legs. I still refused to apologize.
-            she finally gave up on me. I resented DR flying clouds
+            she finally gave up on me. I resented doctor flying clouds
             attitude very much. later my mother said she should not
             have punished me. it really wasnt his melon and he had
             no right to boss us around.</p>
@@ -237,17 +238,25 @@
             So who knows? I may yet meet some of Doctor Flying
             Clouds spirits I didnt believe were for real either!</p>
         <p>These are the combined rememberances of Eugene Ritter, Evelyn Massengill and Floy Brent
-            Dr Flying cloud joined our family in 1934 in the Massey house @ almond, ar.
+            doctor Flying cloud joined our family in 1934 in the Massey house @ almond, ar.
         </p>
     </article></main>
     <div class="navigation">
-        <a href="#" class="previous" title="Previous" onclick="previous()"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></a>
-        <a href="#" class="next" title="Next" onclick="next()"><img src="images\arrohead.png" alt="Next &raquo;"></a>
+        <button href="#" class="previous" title="Previous" onclick="previous()"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></button>
+        <button class="home" onclick="home()"><i class="fa fa-home"></i></button>
+        <button href="#" class="next" title="Next" onclick="next()"><img src="images\arrohead.png" alt="&raquo; Next"></button>
     </div>
+    <div id="copyright">Copyright &copy; 2020</div>
     <script type="text/javascript">
         let currentSelected = 0;
 
         document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+
+        function home(){
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
+            currentSelected = 0;
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+        }
 
         function next(){
             if (currentSelected < document.getElementsByTagName("p").length -1){
@@ -262,6 +271,12 @@
                 currentSelected -= 1;
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
             }
+        }
+
+        function end(){
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
+            currentSelected = document.getElementsByTagName("p").length -1;
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
         }
     </script>
 </body>

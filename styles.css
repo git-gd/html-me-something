@@ -8,7 +8,7 @@ h1 {
     font-family: 'Carter One';
     font-size: 36px;
     color: white;
-    text-shadow: 2px 2px 4px black;
+    text-shadow: 4px 4px 4px black;
     text-align: center;
 }
 
@@ -19,8 +19,13 @@ p {
     font-family: 'Walter Turncoat';
     font-size: 36px;
     color: white;
-    text-shadow: 2px 2px 4px black;
+    text-shadow: 4px 4px 4px black;
     visibility: hidden;
+}
+
+a {
+    padding-left: 25pt;
+    padding-right: 25pt;
 }
 
 #portrait {
@@ -30,8 +35,15 @@ p {
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
 }
 
-#previous {
+.previous {
+    background-color: transparent;
+    border: none;
     transform: rotate(180deg);
+}
+
+.next {
+    background-color: transparent;
+    border: none;
 }
 
 .navigation {
@@ -42,7 +54,16 @@ p {
     transform: translateX(-50%)
 }
 
-a {
-    padding-left: 50pt;
-    padding-right: 50pt;
+#copyright {
+    position: absolute;
+    bottom: 0;
+    margin-left: 30pt;
+    margin-bottom: 5pt;
+}
+
+.home, .end {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 64pt;
 }
