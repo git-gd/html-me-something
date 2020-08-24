@@ -263,6 +263,8 @@
     <script type="text/javascript">
         let currentSelected = 0;
 
+        const dimVal    = 0.2;
+
         const prvBtn    = document.getElementsByTagName("button")[0];
         const homeBtn   = document.getElementsByTagName("button")[1];
         const nxtBtn    = document.getElementsByTagName("button")[2];
@@ -271,8 +273,8 @@
 
         sliderVal.value = currentSelected;
 
-        prvBtn.style.visibility = "hidden";
-        document.getElementsByTagName("button")[1].style.visibility = "hidden";
+        prvBtn.style.opacity = dimVal;
+        homeBtn.style.opacity = dimVal;
 
         document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
 
@@ -280,9 +282,9 @@
             document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
             currentSelected = 0;
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-            prvBtn.style.visibility  = "hidden";
-            homeBtn.style.visibility = "hidden";
-            nxtBtn.style.visibility  = "visible";
+            prvBtn.style.opacity = dimVal;
+            homeBtn.style.opacity = dimVal;
+            nxtBtn.style.opacity = 1;
             sliderVal.value = currentSelected;
         }
 
@@ -291,9 +293,9 @@
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
                 currentSelected += 1;
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-                prvBtn.style.visibility  = "visible";
-                homeBtn.style.visibility = "visible";
-                nxtBtn.style.visibility  = (currentSelected === document.getElementsByTagName("p").length -1)?"hidden":"visible";
+                prvBtn.style.opacity = 1;
+                homeBtn.style.opacity = 1;
+                nxtBtn.style.opacity  = (currentSelected === document.getElementsByTagName("p").length -1)?dimVal:1;
                 sliderVal.value = currentSelected;
             }
         }
@@ -303,9 +305,9 @@
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
                 currentSelected -= 1;
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-                prvBtn.style.visibility  = (currentSelected === 0)?"hidden":"visible";
-                homeBtn.style.visibility = (currentSelected === 0)?"hidden":"visible";
-                nxtBtn.style.visibility  = "visible";
+                prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
+                homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
+                nxtBtn.style.opacity  = 1;
                 sliderVal.value = currentSelected;
             }
         }
@@ -314,9 +316,9 @@
             document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
             currentSelected = Number(navSlider.value);
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-            prvBtn.style.visibility  = (currentSelected === 0)?"hidden":"visible";
-            homeBtn.style.visibility = (currentSelected === 0)?"hidden":"visible";
-            nxtBtn.style.visibility  = (currentSelected === document.getElementsByTagName("p").length -1)?"hidden":"visible";
+            prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
+            homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
+            nxtBtn.style.opacity  = (currentSelected === document.getElementsByTagName("p").length -1)?dimVal:1;
         }
     </script>
 </body>
