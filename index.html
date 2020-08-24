@@ -263,7 +263,7 @@
     <script type="text/javascript">
         let currentSelected = 0;
 
-        const txtCount = document.getElementsByTagName("p").length -1;
+        const txtEnd = document.getElementsByTagName("p").length -1;
 
         const dimVal    = 0.2;
 
@@ -289,7 +289,7 @@
                     currentSelected = Number(val);
                     break;
                 case 'next':
-                    if (currentSelected < txtCount) currentSelected += 1;
+                    if (currentSelected < txtEnd) currentSelected += 1;
                     slider.value = currentSelected;
                     break;
                 case 'previous':
@@ -301,15 +301,15 @@
                     slider.value    = 0;
                     break;
                 case 'end':
-                    currentSelected = txtCount;
-                    slider.value    = txtCount;
+                    currentSelected = txtEnd;
+                    slider.value    = txtEnd;
             }
 
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
 
             prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
             homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
-            nxtBtn.style.opacity  = (currentSelected === txtCount)?dimVal:1;
+            nxtBtn.style.opacity  = (currentSelected === txtEnd)?dimVal:1;
         }
 
         document.onkeydown = function(e) {
