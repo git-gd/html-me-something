@@ -299,6 +299,10 @@
                 case 'home':
                     currentSelected = 0;
                     slider.value    = 0;
+                    break;
+                case 'end':
+                    currentSelected = txtCount;
+                    slider.value    = txtCount;
             }
 
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
@@ -307,6 +311,26 @@
             homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
             nxtBtn.style.opacity  = (currentSelected === txtCount)?dimVal:1;
         }
+
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 33:
+                case 37:
+                    navigate('previous');
+                    break;
+                case 36:
+                case 38:
+                    navigate('home');
+                    break;
+                case 34:
+                case 39:
+                    navigate('next');
+                    break;
+                case 35:
+                case 40:
+                    navigate('end');
+            }
+        };
     </script>
 </body>
 </html>
