@@ -23,6 +23,10 @@ p {
     visibility: hidden;
 }
 
+button {
+    outline: none;
+}
+
 .img {
     width: 25%;
 }
