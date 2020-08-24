@@ -1,7 +1,5 @@
 body {
-    background-image: image('images\drflyingcloud.png');
-    background: grey;
-    background-attachment: fixed;
+    background-image: url("images\background.png");
 }
 
 h1 {
@@ -40,4 +38,9 @@ p {
     padding: 10pt;
     left: 50%;
     transform: translateX(-50%)
+}
+
+a {
+    padding-left: 50pt;
+    padding-right: 50pt;
 }
