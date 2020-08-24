@@ -23,11 +23,6 @@ p {
     visibility: hidden;
 }
 
-a {
-    padding-left: 25pt;
-    padding-right: 25pt;
-}
-
 .img {
     width: 25%;
 }
@@ -89,5 +84,5 @@ a {
 .text {
     position: relative;
     margin-left: 30vw;
-    margin-right: 30px;
+    margin-right: 2vw;
 }
