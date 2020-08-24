@@ -249,12 +249,12 @@
     </main>
     <div class="navigation">
         <div class="buttons">
-            <button href="#" class="previous" title="Previous" onclick="previous()"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></button>
-            <button class="home" onclick="home()"><i class="fa fa-home"></i></button>
-            <button href="#" class="next" title="Next" onclick="next()"><img id="next" src="images\arrohead.png" alt="&raquo; Next"></button>
+            <button href="#" class="previous" title="Previous" onclick="navigate('previous')"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></button>
+            <button class="home" title="Home" onclick="navigate('home')"><i class="fa fa-home"></i></button>
+            <button href="#" class="next" title="Next" onclick="navigate('next')"><img id="next" src="images\arrohead.png" alt="&raquo; Next"></button>
         </div>
         <div class="rangeSlider">
-            <input type="range" min="0" max="23" value="0" class="slider" id="navRange" oninput="slideNav(this)" onchange="slideNav(this)">
+            <input type="range" min="0" max="23" value="0" class="slider" id="navRange" oninput="navigate('slider', this.value)" onchange="navigate('slider', this.value)">
         </div>
     </div>
     <footer>
@@ -262,6 +262,8 @@
     </footer>
     <script type="text/javascript">
         let currentSelected = 0;
+
+        const txtCount = document.getElementsByTagName("p").length -1;
 
         const dimVal    = 0.2;
 
@@ -278,47 +280,32 @@
 
         document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
 
-        function home(){
-            document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
-            currentSelected = 0;
-            document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-            prvBtn.style.opacity = dimVal;
-            homeBtn.style.opacity = dimVal;
-            nxtBtn.style.opacity = 1;
-            slider.value = currentSelected;
-        }
+        function navigate(direction, val){
 
-        function next(){
-            if (currentSelected < document.getElementsByTagName("p").length -1){
-                document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
-                currentSelected += 1;
-                document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-                prvBtn.style.opacity = 1;
-                homeBtn.style.opacity = 1;
-                nxtBtn.style.opacity  = (currentSelected === document.getElementsByTagName("p").length -1)?dimVal:1;
-                slider.value = currentSelected;
-            }
-        }
-        
-        function previous(){
-            if (currentSelected > 0) {
-                document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
-                currentSelected -= 1;
-                document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
-                prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
-                homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
-                nxtBtn.style.opacity  = 1;
-                slider.value = currentSelected;
-            }
-        }
-
-        function slideNav(navSlider){
             document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
-            currentSelected = Number(navSlider.value);
+
+            switch(direction) {
+                case 'slider':
+                    currentSelected = Number(val);
+                    break;
+                case 'next':
+                    if (currentSelected < txtCount) currentSelected += 1;
+                    slider.value = currentSelected;
+                    break;
+                case 'previous':
+                    if (currentSelected > 0) currentSelected -= 1;
+                    slider.value = currentSelected;
+                    break;
+                case 'home':
+                    currentSelected = 0;
+                    slider.value    = 0;
+            }
+
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+
             prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
             homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
-            nxtBtn.style.opacity  = (currentSelected === document.getElementsByTagName("p").length -1)?dimVal:1;
+            nxtBtn.style.opacity  = (currentSelected === txtCount)?dimVal:1;
         }
     </script>
 </body>
