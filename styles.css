@@ -4,13 +4,7 @@ body {
     background-attachment: fixed;
 }
 
-.article {
-    height: 95vh;
-}
-
 h1 { 
-    position: sticky;
-    top: 0;
     font-family: 'Carter One';
     font-size: 36px;
     color: white;
@@ -35,8 +29,6 @@ a {
 }
 
 #portrait {
-    position: sticky;
-    top: 0;
     border-radius: 40pt;
     margin-left: 20pt;
     float: left;
@@ -59,7 +51,7 @@ a {
     bottom: 0;
     padding: 10pt;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 
 #copyright {
