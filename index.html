@@ -254,7 +254,7 @@
             <button href="#" class="next" title="Next" onclick="next()"><img id="next" src="images\arrohead.png" alt="&raquo; Next"></button>
         </div>
         <div class="rangeSlider">
-            <input type="range" min="0" max="23" value="0" class="slider" id="navRange" oninput="slideNav(this)">
+            <input type="range" min="0" max="23" value="0" class="slider" id="navRange" oninput="slideNav(this)" onchange="slideNav(this)">
         </div>
     </div>
     <footer>
@@ -269,9 +269,9 @@
         const homeBtn   = document.getElementsByTagName("button")[1];
         const nxtBtn    = document.getElementsByTagName("button")[2];
 
-        const sliderVal = document.getElementById("navRange");
+        const slider = document.getElementById("navRange");
 
-        sliderVal.value = currentSelected;
+        slider.value = currentSelected;
 
         prvBtn.style.opacity = dimVal;
         homeBtn.style.opacity = dimVal;
@@ -285,7 +285,7 @@
             prvBtn.style.opacity = dimVal;
             homeBtn.style.opacity = dimVal;
             nxtBtn.style.opacity = 1;
-            sliderVal.value = currentSelected;
+            slider.value = currentSelected;
         }
 
         function next(){
@@ -296,7 +296,7 @@
                 prvBtn.style.opacity = 1;
                 homeBtn.style.opacity = 1;
                 nxtBtn.style.opacity  = (currentSelected === document.getElementsByTagName("p").length -1)?dimVal:1;
-                sliderVal.value = currentSelected;
+                slider.value = currentSelected;
             }
         }
         
@@ -308,7 +308,7 @@
                 prvBtn.style.opacity  = (currentSelected === 0)?dimVal:1;
                 homeBtn.style.opacity = (currentSelected === 0)?dimVal:1;
                 nxtBtn.style.opacity  = 1;
-                sliderVal.value = currentSelected;
+                slider.value = currentSelected;
             }
         }
 
