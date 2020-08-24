@@ -38,7 +38,7 @@ a {
 .previous {
     background-color: transparent;
     border: none;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
 }
 
 .next {
@@ -61,9 +61,10 @@ a {
     margin-bottom: 5pt;
 }
 
-.home, .end {
+.home {
     background-color: transparent;
     border: none;
     color: white;
+    text-shadow: 4px 4px 4px black;
     font-size: 64pt;
 }
