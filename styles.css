@@ -1,10 +1,16 @@
 body {
     background-image: url(images/background.jpg);
     background-size: cover;
-    
+    background-attachment: fixed;
 }
 
-h1 {
+.article {
+    height: 95vh;
+}
+
+h1 { 
+    position: sticky;
+    top: 0;
     font-family: 'Carter One';
     font-size: 36px;
     color: white;
@@ -14,8 +20,8 @@ h1 {
 
 p {
     position: absolute;
-    margin-left: 550px;
-    margin-right: 30px;
+    top: 0;
+    left: 0;
     font-family: 'Vollkorn';
     font-size: 36px;
     color: white;
@@ -29,6 +35,8 @@ a {
 }
 
 #portrait {
+    position: sticky;
+    top: 0;
     border-radius: 40pt;
     margin-left: 20pt;
     float: left;
@@ -67,4 +75,10 @@ a {
     color: white;
     text-shadow: 4px 4px 4px black;
     font-size: 64pt;
+}
+
+.text {
+    position: relative;
+    margin-left: 550px;
+    margin-right: 30px;
 }
