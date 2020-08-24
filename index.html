@@ -248,9 +248,14 @@
         </article>
     </main>
     <div class="navigation">
-        <button href="#" class="previous" title="Previous" onclick="previous()"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></button>
-        <button class="home" onclick="home()"><i class="fa fa-home"></i></button>
-        <button href="#" class="next" title="Next" onclick="next()"><img id="next" src="images\arrohead.png" alt="&raquo; Next"></button>
+        <div class="buttons">
+            <button href="#" class="previous" title="Previous" onclick="previous()"><img id="previous" src="images\arrohead.png" alt="&laquo; Previous"></button>
+            <button class="home" onclick="home()"><i class="fa fa-home"></i></button>
+            <button href="#" class="next" title="Next" onclick="next()"><img id="next" src="images\arrohead.png" alt="&raquo; Next"></button>
+        </div>
+        <div class="rangeSlider">
+            <input type="range" min="0" max="23" value="0" class="slider" id="navRange" oninput="slideNav(this)">
+        </div>
     </div>
     <footer>
         <div id="copyright">Copyright &copy; 2020 Randy Parker</div>
@@ -258,9 +263,13 @@
     <script type="text/javascript">
         let currentSelected = 0;
 
-        let prvBtn  = document.getElementsByTagName("button")[0];
-        let homeBtn = document.getElementsByTagName("button")[1];
-        let nxtBtn  = document.getElementsByTagName("button")[2];
+        const prvBtn    = document.getElementsByTagName("button")[0];
+        const homeBtn   = document.getElementsByTagName("button")[1];
+        const nxtBtn    = document.getElementsByTagName("button")[2];
+
+        const sliderVal = document.getElementById("navRange");
+
+        sliderVal.value = currentSelected;
 
         prvBtn.style.visibility = "hidden";
         document.getElementsByTagName("button")[1].style.visibility = "hidden";
@@ -273,7 +282,8 @@
             document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
             prvBtn.style.visibility  = "hidden";
             homeBtn.style.visibility = "hidden";
-            nxtBtn.style.visibility = "visible";
+            nxtBtn.style.visibility  = "visible";
+            sliderVal.value = currentSelected;
         }
 
         function next(){
@@ -284,6 +294,7 @@
                 prvBtn.style.visibility  = "visible";
                 homeBtn.style.visibility = "visible";
                 nxtBtn.style.visibility  = (currentSelected === document.getElementsByTagName("p").length -1)?"hidden":"visible";
+                sliderVal.value = currentSelected;
             }
         }
         
@@ -294,8 +305,18 @@
                 document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
                 prvBtn.style.visibility  = (currentSelected === 0)?"hidden":"visible";
                 homeBtn.style.visibility = (currentSelected === 0)?"hidden":"visible";
-                nxtBtn.style.visibility = "visible";
+                nxtBtn.style.visibility  = "visible";
+                sliderVal.value = currentSelected;
             }
+        }
+
+        function slideNav(navSlider){
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "hidden";
+            currentSelected = Number(navSlider.value);
+            document.getElementsByTagName("p")[currentSelected].style.visibility = "visible";
+            prvBtn.style.visibility  = (currentSelected === 0)?"hidden":"visible";
+            homeBtn.style.visibility = (currentSelected === 0)?"hidden":"visible";
+            nxtBtn.style.visibility  = (currentSelected === document.getElementsByTagName("p").length -1)?"hidden":"visible";
         }
     </script>
 </body>
