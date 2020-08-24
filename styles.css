@@ -41,10 +41,20 @@ a {
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
 }
 
+#previous {
+    width: 5vw;
+    height: auto;
+}
+
 .previous {
     background-color: transparent;
     border: none;
     transform: scaleX(-1);
+}
+
+#next {
+    width: 5vw;
+    height: auto;
 }
 
 .next {
@@ -52,10 +62,18 @@ a {
     border: none;
 }
 
+.home {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-shadow: 4px 4px 4px black;
+    font-size: 5vw;
+}
+
 .navigation {
     position: fixed;
     bottom: 0;
-    padding: 10pt;
+    padding: 1vw;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -65,14 +83,6 @@ a {
     bottom: 0;
     margin-left: 30pt;
     margin-bottom: 5pt;
-}
-
-.home {
-    background-color: transparent;
-    border: none;
-    color: white;
-    text-shadow: 4px 4px 4px black;
-    font-size: 64pt;
 }
 
 .text {
