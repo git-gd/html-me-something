@@ -29,6 +29,7 @@ a {
 }
 
 #portrait {
+    position: fixed;
     border-radius: 40pt;
     margin-left: 20pt;
     float: left;
@@ -47,7 +48,7 @@ a {
 }
 
 .navigation {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 10pt;
     left: 50%;
@@ -55,7 +56,7 @@ a {
 }
 
 #copyright {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin-left: 30pt;
     margin-bottom: 5pt;
