@@ -67,6 +67,8 @@ button {
     color: white;
     text-shadow: 4px 4px 4px black;
     font-size: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .navigation {
